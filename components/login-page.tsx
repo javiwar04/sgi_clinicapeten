@@ -2,11 +2,12 @@
 
 import { useState } from "react"
 import { useAuth } from "@/lib/auth-context"
+import { BrandLogo } from "@/components/brand-logo"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Activity, Eye, EyeOff, Loader2, Stethoscope } from "lucide-react"
+import { Activity, Eye, EyeOff, Loader2 } from "lucide-react"
 
 export function LoginPage() {
   const { login } = useAuth()
@@ -31,14 +32,10 @@ export function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-accent/5 p-4">
-      <div className="w-full max-w-md">
+      <div className="w-full max-w-lg">
         {/* Logo and Title */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary mb-4">
-            <Stethoscope className="w-8 h-8 text-primary-foreground" />
-          </div>
-          <h1 className="text-2xl font-bold text-foreground">SGI Clínica Médica Petén</h1>
-          <p className="text-muted-foreground mt-2">Sistema de Gestión Integrado</p>
+        <div className="flex justify-center mb-10">
+          <BrandLogo variant="full" className="h-28" />
         </div>
 
         <Card className="border-border/50 shadow-lg">

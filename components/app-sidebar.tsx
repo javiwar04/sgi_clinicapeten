@@ -3,6 +3,7 @@
 import { useAuth, roleLabels, type UserRole } from "@/lib/auth-context"
 import { useNavigation, type PageType } from "@/app/page"
 import { cn } from "@/lib/utils"
+import { BrandLogo } from "@/components/brand-logo"
 import {
   Activity,
   Calendar,
@@ -141,19 +142,17 @@ export function AppSidebar() {
     <aside
       className={cn(
         "flex flex-col h-screen bg-sidebar text-sidebar-foreground border-r border-sidebar-border transition-all duration-300",
-        collapsed ? "w-16" : "w-64"
+        collapsed ? "w-20" : "w-72"
       )}
     >
       {/* Logo */}
-      <div className="flex items-center h-16 px-4 border-b border-sidebar-border">
+      <div className="flex items-center h-20 px-4 border-b border-sidebar-border">
         <div className="flex items-center gap-3 min-w-0">
-          <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-sidebar-primary flex items-center justify-center">
-            <Stethoscope className="w-4 h-4 text-sidebar-primary-foreground" />
-          </div>
+          <BrandLogo variant="icon" className="flex-shrink-0 w-12 h-12" />
           {!collapsed && (
             <div className="min-w-0">
-              <h1 className="font-bold text-sm truncate">SGI Clinica</h1>
-              <p className="text-xs text-sidebar-foreground/60 truncate">Peten</p>
+              <h1 className="font-bold text-base truncate">SGI Clinica de Peten</h1>
+              <p className="text-xs text-sidebar-foreground/60 truncate">Sistema Clinico</p>
             </div>
           )}
         </div>

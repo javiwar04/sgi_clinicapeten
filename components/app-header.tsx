@@ -1,6 +1,7 @@
 "use client"
 
 import { useAuth, roleLabels } from "@/lib/auth-context"
+import { BrandLogo } from "@/components/brand-logo"
 import { Bell, Search, UserCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -20,10 +21,13 @@ export function AppHeader({ title }: AppHeaderProps) {
   const { user } = useAuth()
 
   return (
-    <header className="h-16 bg-card border-b border-border flex items-center justify-between px-6">
-      <div className="flex items-center gap-4">
+    <header className="h-20 bg-card border-b border-border flex items-center justify-between px-6">
+      <div className="flex items-center gap-4 min-w-0">
+        <div className="hidden lg:block">
+          <BrandLogo variant="full" className="h-14" />
+        </div>
         {title && (
-          <h1 className="text-lg font-semibold text-foreground">{title}</h1>
+          <h1 className="text-lg font-semibold text-foreground truncate">{title}</h1>
         )}
       </div>
 
